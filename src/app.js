@@ -3,7 +3,7 @@ import employeesRoutes from './routes/employees.routes.js'
 import indexRoutes from './routes/index.routes.js'
 import cors from "cors"
 
-const whiteList = ['http://localhost:5173/']
+const whiteList = ['http://localhost:5173']
 const app = express();
 
 app.use(cors({origin:whiteList}));//todo el mundo
