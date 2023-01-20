@@ -3,9 +3,10 @@ import employeesRoutes from './routes/employees.routes.js'
 import indexRoutes from './routes/index.routes.js'
 import cors from "cors"
 
+const whiteList = ['http://localhost:5173/']
 const app = express();
 
-app.use(cors());//todo el mundo
+app.use(cors({origin:whiteList}));//todo el mundo
 app.use(express.json()); //antes de que llegue a la ruta
 
 app.use("/",indexRoutes);
