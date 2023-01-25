@@ -71,11 +71,11 @@ export const deleteEmployees =  async (req,res)=>{
 
 export const updateEmployees = async(req,res)=>{
     const {id} = req.params;
-    const {name, salary}=req.body;
+    const {name, salary, inStock}=req.body;
 
     try{
-        const [result] = await pool.query('UPDATE employee SET name = IFNULL(?, name), salary = IFNULL(?, salary) WHERE id=?',
-        [name, salary, id]);
+        const [result] = await pool.query('UPDATE employee SET name = IFNULL(?, name), salary = IFNULL(?, salary), inStock = IFNULL(?, inStock) WHERE id=?',
+        [name, salary, inStock, id]);
 
         if(result.affectedRows === 0) return res.status(404).json({
             message:'Employee not found'
