@@ -34,7 +34,7 @@ export const getEmployee = async (req, res) =>{
 export const createEmployees = async (req,res)=>{
     try{
     const { name, salary, inStock} = req.body;
-    const [rows] = await pool.query('INSERT INTO employee (name, salary, inStock) VALUES(?, ?)',
+    const [rows] = await pool.query('INSERT INTO employee (name, salary, inStock) VALUES(?, ?, ?)',
     [name, salary, inStock]);
 
     res.status(201).json({ 
