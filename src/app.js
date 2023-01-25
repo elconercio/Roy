@@ -7,7 +7,7 @@ const app = express();
 
 const whiteList = ['http://localhost:5173']
 
-app.use(cors());//todo el mundo
+app.use(cors({origin:whiteList}));//todo el mundo
 
 app.use(express.json()); //antes de que llegue a la ruta
 
