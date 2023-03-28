@@ -4,7 +4,7 @@ import cors from "cors"
 
 const app = express();
 
-const corsOptions = {origin:'https://brunodv.github.io'}
+const corsOptions = {origin:'https://brunodv.github.io/RoyGPT'}
 
 app.use(cors(corsOptions));//todo el mundo
 
