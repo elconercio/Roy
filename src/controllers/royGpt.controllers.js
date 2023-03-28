@@ -4,20 +4,20 @@ export const createResp = async (req,res)=>{
     try{
         const {pregunta}  = req.body;
 
-const apiKey = process.env.AK
+        const apiKey = process.env.AK
 
-const configuration = new Configuration({ apiKey })
+        const configuration = new Configuration({ apiKey })
 
-const openai = new OpenAIApi(configuration)
+        const openai = new OpenAIApi(configuration)
 
-const model = 'gpt-3.5-turbo'
+        const model = 'gpt-3.5-turbo'
 
-const messages = [
-    {
-        role:'user',
-        content:`${pregunta}`
-        }
-]
+        const messages = [
+            {
+                role:'user',
+                content:`${pregunta}`
+                }
+        ]
 
 const completion = await openai.createChatCompletion({
     model,
