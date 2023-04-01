@@ -1,9 +1,8 @@
 import { Router } from 'express'
-import { createResp, getIndex }  from '../controllers/royGpt.controllers.js'
+import { getIndex }  from '../controllers/index.controller.js'
 
 const router = Router()
 
 router.get('/', getIndex)
-router.post('/resp', createResp)
 
 export default router
