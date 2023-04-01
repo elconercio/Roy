@@ -35,8 +35,9 @@ res.status(201).json({
 }catch(error){
         return res.status(500).json({
             message:'Something goes wrong',
+            error
         });
     }            
-console.log(error)
+
 };
 
